@@ -1,20 +1,26 @@
-# HoopIG — Mobile MVP Demo
+# HoopIG — Mobile Social Discovery Demo
 
-HoopIG is a basketball-inspired social discovery app prototype built with Expo and React Native. This MVP demonstrates the main onboarding and discovery experience, with fictional local profiles and simulated interactions for product demos.
+HoopIG is an independent mobile social discovery app demo built with Expo and React Native. It explores how people might meet new people, make friends, and discover potential connections through swipe-style profiles. The demo uses fictional local profiles and simulated interactions for product presentations.
+
+## Product inspiration
+
+The swipe-based discovery interaction is inspired by Tinder, while the social profile and connection flow is inspired by Hoop. These references are product inspiration only. HoopIG is an independent demo and is not affiliated with, endorsed by, or connected to Tinder or Hoop.
 
 ## Features
 
 - Google sign-in connected to Supabase Auth.
 - Profile onboarding for nickname, birthday, gender, country, interests, and profile photo.
-- Profile data saved to Supabase.
-- Discover screen with sample profiles, three photos per profile, and swipe gestures.
+- User profile data saved to Supabase when the project is configured with a Supabase backend.
+- Discover screen with fictional local sample profiles, three photos per profile, and swipe gestures.
 - Demo profile details, interests, and Instagram handles.
-- Local-only skip and add-friend interactions designed for showcasing the user flow.
+- Simulated local-only skip and add-friend interactions, including a match-style profile panel.
 - Profile, rewards, and settings screens.
 
-## Demo scope
+## Demo scope and limitations
 
-This repository is a visual MVP, not a production dating or social platform. Discover profiles and photos are fictional demo content. Swipe actions and match-related UI are simulated; messaging, real matching, profile moderation, and production discovery are not connected to a backend service.
+This repository is a visual MVP, not a production social or dating platform. The discover profiles and photos are fictional local demo content bundled with the app. Swipe, add-friend, and match-related interactions are simulated in the client and are not connected to a matching service or persistent connection system.
+
+Messaging, production matching, profile moderation, and live discovery are not implemented. The Instagram actions are also demo-only and do not open an external app. Supabase Auth and profile persistence require the project's own backend configuration; the sample discover profiles remain local demo data.
 
 ## Tech stack
 
@@ -23,7 +29,7 @@ This repository is a visual MVP, not a production dating or social platform. Dis
 - Expo Router
 - TypeScript
 - Supabase Auth and database
-- AsyncStorage for the Supabase session on native platforms
+- AsyncStorage for the Supabase session and local profile draft on native platforms
 
 ## Run locally
 
