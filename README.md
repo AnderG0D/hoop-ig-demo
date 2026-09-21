@@ -1,50 +1,68 @@
-# Welcome to your Expo app 👋
+# HoopIG — Mobile MVP Demo
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+HoopIG is a basketball-inspired social discovery app prototype built with Expo and React Native. This MVP demonstrates the main onboarding and discovery experience, with fictional local profiles and simulated interactions for product demos.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Google sign-in connected to Supabase Auth.
+- Profile onboarding for nickname, birthday, gender, country, interests, and profile photo.
+- Profile data saved to Supabase.
+- Discover screen with sample profiles, three photos per profile, and swipe gestures.
+- Demo profile details, interests, and Instagram handles.
+- Local-only skip and add-friend interactions designed for showcasing the user flow.
+- Profile, rewards, and settings screens.
 
-   ```bash
-   npm install
-   ```
+## Demo scope
 
-2. Start the app
+This repository is a visual MVP, not a production dating or social platform. Discover profiles and photos are fictional demo content. Swipe actions and match-related UI are simulated; messaging, real matching, profile moderation, and production discovery are not connected to a backend service.
 
-   ```bash
-   npx expo start
-   ```
+## Tech stack
 
-In the output, you'll find options to open the app in a
+- React Native
+- Expo SDK 54
+- Expo Router
+- TypeScript
+- Supabase Auth and database
+- AsyncStorage for the Supabase session on native platforms
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Run locally
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Open the project in an Android emulator, an iOS simulator, or a development build. Native Google Sign-In requires a development build; it is not supported in Expo Go.
 
-## Learn more
+## Environment configuration
 
-To learn more about developing your project with Expo, look at the following resources:
+Create a `.env` file in the project root and provide the configuration for your own Supabase and Google OAuth projects:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```dotenv
+EXPO_PUBLIC_SUPABASE_URL=your-supabase-project-url
+EXPO_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID=your-google-web-client-id
+EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID=your-google-ios-client-id
+GOOGLE_IOS_URL_SCHEME=your-google-ios-url-scheme
+```
 
-## Join the community
+Use the credentials from your own provider projects. Never commit private credentials or a Supabase service-role key. The `.env` file is ignored by Git.
 
-Join our community of developers creating universal apps.
+## Project structure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```text
+app/
+  (app)/       Discover, profile, and settings
+  (public)/    Sign-in
+  (setup)/     Profile onboarding
+constants/     Theme and fictional demo profiles
+assets/        Local app and demo-profile images
+components/    Shared UI components
+lib/           Supabase, Google sign-in, and profile helpers
+providers/     Authentication state
+types/         Profile types
+```
+
+## License
+
+This repository is a client-demo prototype. Add a license before reusing or distributing the code.
